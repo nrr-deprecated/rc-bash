@@ -1,1 +1,3 @@
+<title>Home page</title>
+
 This is my bash environment.  There are any like it, but this one is mine.
