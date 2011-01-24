@@ -1,3 +1,7 @@
 <title>Home page</title>
 
-This is my bash environment.  There are any like it, but this one is mine.
+This is my bash environment.  There are many like it, but this one is mine.
+
+To install:
+
+<verbatim>curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
