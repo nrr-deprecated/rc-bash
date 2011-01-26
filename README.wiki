@@ -5,3 +5,6 @@ This is my bash environment.  There are many like it, but this one is mine.
 To install:
 
 <verbatim>curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
+
+On OS X, you'll have to remove the <tt>-b</tt> option from the invocations of
+<tt>cp</tt> in the above script.
