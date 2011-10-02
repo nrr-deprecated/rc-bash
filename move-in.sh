@@ -16,10 +16,6 @@ maybe_create_ssh_directory() {
 	fi
 }
 
-kill_bash_history() {
-	ln -svf /dev/null $HOME/.bash_history
-}
-
 kill_all_history() {
 	for f in .bash_history .mysql_history .psql_history .sqlite_history
 	do
