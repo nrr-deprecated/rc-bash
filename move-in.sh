@@ -20,40 +20,33 @@ kill_bash_history() {
 	ln -svf /dev/null $HOME/.bash_history
 }
 
+kill_all_history() {
+	for f in .bash_history .mysql_history .psql_history .sqlite_history
+	do
+		rm -f $HOME/$f
+		ln -s /dev/null $HOME/$f
+	done
+}
+
 pull_files_from_fossil() {
 	# This relies on TD above.
 
 	repo_host="fossil.moyi.us"
 	repo_name=${REPO_NAME}
-	repo_path="/zip/${repo_name}-tip.zip?uuid=tip"
-	url="http://${repo_host}/${repo_name}/zip/${repo_name}-tip.zip?uuid=tip"
+	repo_path="/tarball/${repo_name}-tip.tar.gz?uuid=tip"
+	url="http://${repo_host}/${repo_name}/tarball/${repo_name}-tip.tar.gz?uuid=tip"
 
-	curl -LsSf $url > $TD/${repo_name}-tip.zip
-
-	pushd $TD
-	unzip nrr-dotfiles-bash-environment-tip.zip
-	popd
+	curl -LsSf $url | tar -C $TD -xvzf -
 }
 
 install_into_HOME() {
 	# This relies on TD above.
 
-	pushd $TD/$REPO_NAME-tip/src
-	for f in dot.*
-	do
-		chmod -v u=rwx,go-rwx $f
-
-		if [ ! -d $f ]
-		then
-			chmod -v u-x $f
-		fi
-
-		cp -v -a $f $HOME/${f#dot}
-	done
-	popd
+	mv -f $TD/$REPO_NAME-*/.???* $HOME/
+	rm -rf $TD
 }
 
 pull_files_from_fossil
 install_into_HOME
 maybe_create_ssh_directory
-kill_bash_history
+kill_all_history
