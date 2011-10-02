@@ -42,7 +42,7 @@ pull_files_from_fossil() {
 install_into_HOME() {
 	# This relies on TD above.
 
-	mv -f $TD/$REPO_NAME-*/.???* $HOME/
+	mv -f $TD/$REPO_NAME-*/src/.???* $HOME/
 	rm -rf $TD
 }
 
