@@ -43,7 +43,7 @@ install_into_HOME() {
 }
 
 clean_up_old_bashrc_d_entries() {
-	find $HOME/.bashrc.d -type d -size 0 -exec rm -f '{}' \;
+	find $HOME/.bashrc.d -type f -size 0 -exec rm -f '{}' \;
 }
 
 pull_files_from_fossil
