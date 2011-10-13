@@ -42,7 +42,12 @@ install_into_HOME() {
 	rm -rf $TD
 }
 
+clean_up_old_bashrc_d_entries() {
+	find $HOME/.bashrc.d -type d -size 0 -exec rm -f '{}' \;
+}
+
 pull_files_from_fossil
 install_into_HOME
 maybe_create_ssh_directory
 kill_all_history
+clean_up_old_bashrc_d_entries
