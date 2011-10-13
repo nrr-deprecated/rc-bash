@@ -11,8 +11,8 @@ REPO_NAME="nrr-dotfiles-bash-environment"
 maybe_create_ssh_directory() {
 	if [ ! -d $HOME/.ssh ]
 	then
-		mkdir -p -v $HOME/.ssh
-		chmod -v u=rwx,og-rwx $HOME/.ssh
+		mkdir -p $HOME/.ssh
+		chmod u=rwx,og-rwx $HOME/.ssh
 	fi
 }
 
@@ -38,7 +38,7 @@ pull_files_from_fossil() {
 install_into_HOME() {
 	# This relies on TD above.
 
-	mv -f $TD/$REPO_NAME-*/src/.???* $HOME/
+	cp -Rf $TD/$REPO_NAME-*/src/.???* $HOME/
 	rm -rf $TD
 }
 
