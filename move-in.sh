@@ -32,7 +32,7 @@ pull_files_from_fossil() {
 	repo_path="/tarball/${repo_name}-tip.tar.gz?uuid=tip"
 	url="http://${repo_host}/${repo_name}/tarball/${repo_name}-tip.tar.gz?uuid=tip"
 
-	curl -LsSf $url | tar -C $TD -xvzf -
+	curl ${CURL_OPTS-""} -LsSf $url | tar -C $TD -xvzf -
 }
 
 install_into_HOME() {

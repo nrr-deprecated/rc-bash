@@ -4,4 +4,18 @@ This is my bash environment.  There are many like it, but this one is mine.
 
 To install:
 
-<verbatim>curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
+<verbatim>curl -LsSf http://chiselapp.com/users/nrr/repository/dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
+
+To get your own local copy over secure https, issue the following commands:
+<pre>
+fossil clone https://chiselapp.com/user/nrr/repository/dotfiles-bash-environment dotfiles-bash-environment.fossil
+mkdir dotfiles-bash-environment && cd dotfiles-bash-environment
+fossil open ../dotfiles-bash-environment.fossil
+</pre>
+
+To get your own local copy over normal http, issue the following commands:
+<pre>
+fossil clone http://chiselapp.com/user/nrr/repository/dotfiles-bash-environment dotfiles-bash-environment.fossil
+mkdir dotfiles-bash-environment && cd dotfiles-bash-environment
+fossil open ../dotfiles-bash-environment.fossil
+</pre>
