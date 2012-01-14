@@ -4,7 +4,7 @@ This is my bash environment.  There are many like it, but this one is mine.
 
 To install:
 
-<verbatim>curl -LsSf http://chiselapp.com/users/nrr/repository/dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
+<verbatim>curl -LsSf http://chiselapp.com/user/nrr/repository/dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
 
 To get your own local copy over secure https, issue the following commands:
 <pre>
