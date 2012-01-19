@@ -6,14 +6,14 @@ To install:
 
 <verbatim>curl -LsSf http://chiselapp.com/user/nrr/repository/dotfiles-bash-environment/doc/trunk/move-in.sh | sh -</verbatim>
 
-To get your own local copy over secure https, issue the following commands:
+To get your own local copy over secure HTTPS, issue the following commands:
 <pre>
 fossil clone https://chiselapp.com/user/nrr/repository/dotfiles-bash-environment dotfiles-bash-environment.fossil
 mkdir dotfiles-bash-environment && cd dotfiles-bash-environment
 fossil open ../dotfiles-bash-environment.fossil
 </pre>
 
-To get your own local copy over normal http, issue the following commands:
+To get your own local copy over normal HTTP, issue the following commands:
 <pre>
 fossil clone http://chiselapp.com/user/nrr/repository/dotfiles-bash-environment dotfiles-bash-environment.fossil
 mkdir dotfiles-bash-environment && cd dotfiles-bash-environment
