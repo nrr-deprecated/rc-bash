@@ -2,11 +2,11 @@
 #
 # Download the bash environment from fossil.moyi.us and install them to $HOME.
 #
-# Usage: curl -LsSf http://fossil.moyi.us/nrr-dotfiles-bash-environment/doc/trunk/move-in.sh | sh -
+# See README for usage.
 #
 
 TD=`mktemp -d XXXXXXX`
-REPO_NAME="dotfiles-bash-environment"
+REPO_NAME="dotfiles-bashrc"
 
 maybe_create_ssh_directory() {
 	if [ ! -d $HOME/.ssh ]
@@ -24,13 +24,13 @@ kill_all_history() {
 	done
 }
 
-pull_files_from_fossil() {
+pull_files_from_git() {
 	# This relies on TD above.
 
-	repo_host="chiselapp.com/user/nrr/repository"
-	repo_name=${REPO_NAME}
-	repo_path="/tarball/${repo_name}-tip.tar.gz?uuid=tip"
-	url="http://${repo_host}/${repo_name}/tarball/${repo_name}-tip.tar.gz?uuid=tip"
+	repo_host="github.com"
+	repo_name="nrr/${REPO_NAME}"
+	archive_path="tarball/master"
+	url="http://${repo_host}/${repo_name}/${archive_path}"
 
 	curl ${CURL_OPTS-""} -LsSf $url | tar -C $TD -xvzf -
 }
@@ -46,7 +46,7 @@ clean_up_old_bashrc_d_entries() {
 	find $HOME/.bashrc.d -type f -size 0 -exec rm -f '{}' \;
 }
 
-pull_files_from_fossil
+pull_files_from_git
 install_into_HOME
 maybe_create_ssh_directory
 kill_all_history
