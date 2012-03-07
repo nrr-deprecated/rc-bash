@@ -30,7 +30,7 @@ pull_files_from_git() {
 	repo_host="github.com"
 	repo_name="nrr/${REPO_NAME}"
 	archive_path="tarball/master"
-	url="http://${repo_host}/${repo_name}/${archive_path}"
+	url="https://${repo_host}/${repo_name}/${archive_path}"
 
 	curl ${CURL_OPTS-""} -LsSf $url | tar -C $TD -xvzf -
 }
